@@ -1,18 +1,16 @@
 def main(n):
-    r = 0
-    if n%3 == 0: r = n%3
-    else: r = n-1
+    if n%3 == 0: n//=3
+    else: n-=1
 
-    if r%5 == 0: r%=5
-    else: r-=1
+    if n%5 == 0: n//=5
+    else: n-=1
 
-    if r%11 == 0: r%=11
-    else: r-=1
-
-    return r
+    if n%11 == 0: n//=11
+    else: n-=1
+    return n
 
 k = 0
-for i in range(1,10000000):
+for i in range(1,100000):
     if main(i) == 8:
         k+=1
 print(k)
